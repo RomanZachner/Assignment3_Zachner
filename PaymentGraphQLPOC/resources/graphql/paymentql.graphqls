@@ -1,0 +1,14 @@
+type Payment {
+	id: ID!,
+	amount: Int,
+	receiver: String
+}
+
+type Query {
+	payments:[Payment]
+	payment(id: ID):Payment
+}
+
+type Mutation {
+	createPayment(amount: Int!, receiver: String!):Payment
+}

@@ -1,0 +1,33 @@
+Solution: SpringBoot, GraphQL, H2 database
+
+Run App:
+	at.zachner.PaymentGraphQLPOC.App.java
+
+Open Url:
+	http://localhost:8080/graphiql
+	
+create a payment:
+	mutation {
+	  	createPayment(amount: 12, receiver: "fh-technikum") {
+	  		id
+	  	}
+	}
+	mutation {
+	  	createPayment(amount: 20, receiver: "bh-wien") {
+	  		id
+	  	}
+	}
+
+get all payments limited to 100:	
+	query {
+		payments {
+			id,amount,receiver
+		}
+	}
+	
+get payment by id:	
+	payment(id: 1) {
+		payments {
+			id,amount,receiver
+		}
+	}
